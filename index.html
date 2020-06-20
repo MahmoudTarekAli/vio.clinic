@@ -563,7 +563,7 @@
                     <!-- Contact Box -->
                     <div class="contact-box bg-white text-center rounded p-4 p-sm-3 mt-5 mt-lg-0 shadow-lg">
                         <!-- Contact Form -->
-                        <form id="contact-form">
+                        <form id="contact-form" class="contact-form">
                             <div class="contact-top">
                                 <h3 class="contact-title">SignUp Now!</h3>
                                 <h5 class="text-secondary fw-3 py-3">Sign up now & enjoy one month free trial no credit
@@ -571,30 +571,39 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6 col-12">
-                                    <input id="name" type="text" class="form-control" name="firstName"
+                                    <label>First Name</label>
+                                    <input id="firstName" type="text" class="form-control" name="firstName"
                                            placeholder="First Name"
                                            required="required">
                                 </div>
                                 <div class="form-group col-lg-6 col-12">
+                                    <label>Last Name</label>
                                     <input id="lastName" type="text" class="form-control" name="lastName"
                                            placeholder="Last Name"
                                            required="required">
                                 </div>
                                 <div class="form-group col-lg-6 col-12">
+                                    <label>Mobile</label>
+
                                     <input type="tel" class="form-control" placeholder="Mobile" id="telephone"
                                            required="required">
                                 </div>
                                 <div class="form-group col-lg-6 col-12">
+                                    <label>Email</label>
+
                                     <input id="email" type="email" class="form-control" name="email"
                                            placeholder="Email"
                                            required="required">
                                 </div>
                                 <div class="form-group col-lg-6 col-12">
-                                    <input id="birthDate" type="text" class="form-control" name="birthDate"
+                                    <label>Birth Date</label>
+
+                                    <input id="birthDate" type="date" class="form-control" name="birthDate"
                                            placeholder="Birth Date"
                                            required="required">
                                 </div>
                                 <div class="form-group col-lg-6 col-12">
+                                    <label>Gender</label>
                                     <select id="gender" class="form-control">
                                         <option hidden>Gender</option>
                                         <option value="male">male</option>
@@ -602,14 +611,51 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-6 col-12">
+                                    <label>Specialty</label>
+
                                     <input id="specialty" type="text" class="form-control" name="specialty"
                                            placeholder="Specialty"
                                            required="required">
                                 </div>
+                                <div class="form-group col-lg-6 col-12">
+                                    <label>Session Cost</label>
+
+                                    <input id="SessionCost" type="number" class="form-control" name="Session Cost"
+                                           placeholder="Session Cost"
+                                           required="required">
+                                </div>
+                                <div class=" form-group col-lg-6 col-12">
+                                    <label>Session Time</label>
+
+                                    <input id="SessionTime" type="number" class="form-control" name="Session Time"
+                                           placeholder="Session Time"
+                                           required="required">
+                                </div>
+                                <div class=" col-lg-6 col-12">
+                                    <div class="file-upload">
+                                        <label for="GraduationCertificate">Graduation Certificate<input type="file"
+                                                                                                        id="GraduationCertificate"
+                                                                                                        multiple
+                                                                                                        style="margin-top: 20px"></label>
+                                    </div>
+                                </div>
+                                <div class=" col-lg-6 col-12">
+                                    <div class="file-upload">
+                                        <label for="MedicalLicense">Medical License<input type="file"
+                                                                                          id="MedicalLicense" multiple
+                                                                                          style="margin-top: 20px"></label>
+                                    </div>
+                                </div>
+                                <div class=" col-lg-6 col-12">
+                                    <div class="file-upload">
+                                        <label for="Other">Other<input type="file" id="Other" multiple
+                                                                       style="margin-top: 20px"></label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-bordered w-100 mt-3 mt-sm-4" id="submit" type="submit">Sign
-                                    Up
+                                <button class="btn btn-bordered w-100  mt-3 mt-sm-4" id="submit" type="submit">
+                                    <i class="fa fa-spin fa-2x"></i> <span class="signUp"> Sign Up</span>
                                 </button>
                                 <div class="contact-bottom">
                                         <span class="d-inline-block mt-3">By signing up, you accept our <a href="#">Terms</a> &amp; <a
@@ -949,7 +995,8 @@
                                     </div>
                                 </div>
                                 <div class="service-text media-body">
-                                    <p>Digital transformation is not a luxury anymore. Connected care is one of essential future trait of successful practice.</p>
+                                    <p>Digital transformation is not a luxury anymore. Connected care is one of
+                                        essential future trait of successful practice.</p>
                                 </div>
                             </li>
                             <!-- Single Service -->
@@ -960,7 +1007,8 @@
                                     </div>
                                 </div>
                                 <div class="service-text media-body">
-                                    <p>Maxmize your patient experience, VIO Clinic will help you to review patient health timeline just before the session.</p>
+                                    <p>Maxmize your patient experience, VIO Clinic will help you to review patient
+                                        health timeline just before the session.</p>
                                 </div>
                             </li>
                             <!-- Single Service -->
@@ -971,7 +1019,8 @@
                                     </div>
                                 </div>
                                 <div class="service-text media-body">
-                                    <p>Book your seat in "The New Normal" and guarantee your business continuity in the rapidly evolving health industry.</p>
+                                    <p>Book your seat in "The New Normal" and guarantee your business continuity in the
+                                        rapidly evolving health industry.</p>
                                 </div>
                             </li>
                             <!-- Single Service -->
@@ -1294,7 +1343,8 @@
     <!-- ***** Download Area Start ***** -->
     <!--    <section class="section download-area overlay-dark ptb_100">-->
     <!--        <div class="container">-->
-    <!--            <div class="row justify-content-center">-->
+    <!--            <div class="row justify-content-center">-->/auth/local/register
+
     <!--                <div class="col-12 col-md-10 col-lg-8">-->
     <!--                    &lt;!&ndash; Download Text &ndash;&gt;-->
     <!--                    <div class="download-text text-center">-->
@@ -1399,6 +1449,7 @@
 <!-- Bootstrap js -->
 <script src="./assets/popper.min.js"></script>
 <script src="./assets/bootstrap.min.js"></script>
+<script src="./assets/bootstrap-notify.min.js"></script>
 
 <!-- Plugins js -->
 <script src="./assets/plugins.min.js"></script>
@@ -1414,8 +1465,10 @@
     }
 
     $(document).ready(function () {
+        $(".fa-spin").hide();
+
         console.log('this');
-        var countrycode = '';
+        var countrycode = '20';
         $("#telephone").intlTelInput({
             preferredCountries: ["us", "ca"],
             separateDialCode: true,
@@ -1423,43 +1476,143 @@
         }).on('countrychange', function (e, countryData) {
             countrycode = $("#telephone").intlTelInput("getSelectedCountryData").dialCode;
         });
-        $("#submit").click(function () {
+        $("#submit").click(function (event) {
+            event.preventDefault();
+            $(".fa-spin").show();
+            $(".signUp").hide();
+
             if (!$("#contact-form").valid()) {
-                alert('the form is not valid');
+                $.notify({
+                    message: 'Please fill all fields'
+                }, {
+                    placement: {
+                        from: "top",
+                        align: "center"
+                    },
+                    type: 'danger'
+                });
+                $(".signUp").show();
+                $(".fa-spin").hide();
+
                 return false;
             }
             const data = {
-                name: $('#name').val(),
+                firstName: $('#firstName').val(),
+                LastName: $('#lastName').val(),
                 phone: '+' + countrycode + removeZero($('#telephone').val()),
+                gender: $('#gender').val(),
+                specialty: $('#specialty').val(),
                 email: $('#email').val(),
+                cost_per_session: $('#SessionCost').val(),
+                time_session: $('#SessionTime').val(),
+                birthDate: $('#birthDate').val(),
             };
             console.log(data);
+            var fileExtension = ['jpeg', 'jpg', 'png', 'pdf'];
+            const fd = new FormData();
+            const Other = $("#Other")[0].files; // for multiple files
+            for (var i = 0; i < Other.length; i++) {
+                var fileName = Other[i].name;
+                var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+                if ($.inArray(fileNameExt, fileExtension) === -1) {
+                    $.notify({
+                        message: 'Files should be only images or pdfs'
+                    }, {
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        type: 'danger'
+                    });
+                    $(".signUp").show();
+                    $(".fa-spin").hide();
+                    return false;
+                }
+                fd.append('other', Other[i]);
+            }
 
-            // const fd = new FormData();
-            // const file_data = $('input[type="file"]')[0].files; // for multiple files
-            // console.log(file_data);
-            // for(var i = 0;i<file_data.length;i++){
-            //     fd.append('images', file_data[i]);
-            // }
-            // // fd.append('images',images);
-            // fd.append('data', JSON.stringify(data));
-            // $.ajax({
-            //     type: 'POST',
-            //     processData: false,
-            //     contentType: false,
-            //     cache: false,
-            //     url: 'https://api-location.clakett.com/locationsRequestsGuest',
-            //     data: fd,
-            //     enctype: 'multipart/form-data',
-            //     success: function(msg){
-            //         alert('you request has been submitted');
-            //         $(".fa-spinner").hide();
-            //     },
-            //     error: function(msg){
-            //         $(".fa-spinner").hide();
-            //         alert(msg);
-            //     }
-            // });
+            const GraduationCertificate = $("#GraduationCertificate")[0].files; // for multiple files
+            for (var i = 0; i < GraduationCertificate.length; i++) {
+                var fileName = GraduationCertificate[i].name;
+                var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+                if ($.inArray(fileNameExt, fileExtension) === -1) {
+                    $.notify({
+                        message: 'Files should be only images or pdfs'
+                    }, {
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        type: 'danger'
+                    });
+                    $(".signUp").show();
+                    $(".fa-spin").hide();
+                    return false;
+                }
+                fd.append('graduation_certificate', GraduationCertificate[i]);
+            }
+
+            const MedicalLicense = $("#MedicalLicense")[0].files; // for multiple files
+            for (var i = 0; i < MedicalLicense.length; i++) {
+                var fileName = MedicalLicense[i].name;
+                var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+                if ($.inArray(fileNameExt, fileExtension) === -1) {
+                    $.notify({
+                        message: 'Files should be only images or pdfs'
+                    }, {
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        type: 'danger'
+                    });
+                    $(".signUp").show();
+                    $(".fa-spin").hide();
+                    return false;
+                }
+                fd.append('medical_license', MedicalLicense[i]);
+            }
+
+            console.log(GraduationCertificate);
+            console.log(MedicalLicense);
+            console.log(Other);
+            fd.append('data', JSON.stringify(data));
+            $.ajax({
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                cache: false,
+                url: 'https://api.dev.vio.health/auth/local/register',
+                data: fd,
+                enctype: 'multipart/form-data',
+                success: function (msg) {
+                    $.notify({
+                        message: msg.message
+                    }, {
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        type: 'success'
+                    });
+                    $(".fa-spin").hide();
+                    $(".signUp").show();
+                },
+                error: function (msg) {
+                    $.notify({
+                        message: msg.message
+                    }, {
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        type: 'danger'
+                    });
+                    $(".fa-spin").hide();
+                    $(".signUp").show();
+
+                }
+            });
         });
     });
 </script>
@@ -1480,7 +1633,7 @@
     $("#telephone").intlTelInput({
         preferredCountries: ["EG"],
         separateDialCode: true,
-        customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+        customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
             return "e.g. " + selectedCountryPlaceholder;
         },
     }).on('countrychange', function (e, countryData) {

@@ -286,7 +286,11 @@ img {
 /*    -webkit-transform: translateX(-50%);*/
 /*    transform: translateX(-50%);*/
 /*}*/
-
+.contact-form{
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 .homepage-5 .features-area .section-heading > h2::after,
 .contact-page .contact-area .section-heading > h2::after {
     left: 0;
@@ -332,7 +336,7 @@ img {
 .btn:hover,
 .btn:focus,
 .btn:active {
-    color: #4276fe;
+    color: white;
     -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -2240,4 +2244,34 @@ img.navbar-brand-regular {
 
 .service-thumb >img {
     max-width: 100%;
+}
+
+label{
+    font-weight: bold;
+    text-align: left;
+    float: left;
+}
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container {
+    right: auto;
+    left: 0;
+    max-height: 50px
 }

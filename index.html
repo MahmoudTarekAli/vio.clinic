@@ -613,10 +613,29 @@
                                 <div class="form-group col-lg-6 col-12">
                                     <label>Specialty</label>
 
-                                    <input id="specialty" type="text" class="form-control" name="specialty"
-                                           placeholder="Specialty"
-                                           required="required">
-                                </div>
+                                    <select id="specialty" class="form-control">
+                                        <option hidden>specialty</option>
+                                        <option value="Allergy ">Allergy</option>
+                                        <option value="Anesthesiology">Anesthesiology</option>
+                                        <option value="Dermatology">Dermatology</option>
+                                        <option value="Diagnostic Radiology">Diagnostic Radiology</option>
+                                        <option value="Emergency Medicine">Emergency Medicine</option>
+                                        <option value="Family Medicine">Family Medicine</option>
+                                        <option value="Internal Medicine">Internal Medicine</option>
+                                        <option value="Medical Genetics">Medical Genetics</option>
+                                        <option value="Neurology">Neurology</option>
+                                        <option value="Nuclear Medicine">Nuclear Medicine</option>
+                                        <option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option>
+                                        <option value="Ophthalmology">Ophthalmology</option>
+                                        <option value="Pathology">Pathology</option>
+                                        <option value="Pediatrics">Pediatrics</option>
+                                        <option value="Physical Medicine & Rehabilitation">Physical Medicine & Rehabilitation</option>
+                                        <option value="Preventive Medicine">Preventive Medicine</option>
+                                        <option value="Psychiatry">Psychiatry</option>
+                                        <option value="Radiation Oncology">Radiation Oncology</option>
+                                        <option value="Surgery">Surgery</option>
+                                        <option value="Urology">Urology</option>
+                                    </select></div>
                                 <div class="form-group col-lg-6 col-12">
                                     <label>Session Cost</label>
 
@@ -634,6 +653,7 @@
                                 <div class=" col-lg-6 col-12">
                                     <div class="file-upload">
                                         <label for="GraduationCertificate">Graduation Certificate<input type="file"
+                                                                                                        required="required"
                                                                                                         id="GraduationCertificate"
                                                                                                         multiple
                                                                                                         style="margin-top: 20px"></label>
@@ -642,6 +662,7 @@
                                 <div class=" col-lg-6 col-12">
                                     <div class="file-upload">
                                         <label for="MedicalLicense">Medical License<input type="file"
+                                                                                          required="required"
                                                                                           id="MedicalLicense" multiple
                                                                                           style="margin-top: 20px"></label>
                                     </div>
@@ -649,6 +670,7 @@
                                 <div class=" col-lg-6 col-12">
                                     <div class="file-upload">
                                         <label for="Other">Other<input type="file" id="Other" multiple
+                                                                       required="required"
                                                                        style="margin-top: 20px"></label>
                                     </div>
                                 </div>
@@ -1470,13 +1492,15 @@
         console.log('this');
         var countrycode = '20';
         $("#telephone").intlTelInput({
-            preferredCountries: ["us", "ca"],
+            preferredCountries: ["EG"],
             separateDialCode: true,
             initialCountry: ""
         }).on('countrychange', function (e, countryData) {
             countrycode = $("#telephone").intlTelInput("getSelectedCountryData").dialCode;
         });
         $("#submit").click(function (event) {
+            $('#submit').attr("disabled", true);
+
             event.preventDefault();
             $(".fa-spin").show();
             $(".signUp").hide();
@@ -1493,21 +1517,21 @@
                 });
                 $(".signUp").show();
                 $(".fa-spin").hide();
+                $('#submit').attr("disabled", false);
 
                 return false;
             }
             const data = {
-                firstName: $('#firstName').val(),
-                LastName: $('#lastName').val(),
-                phone: '+' + countrycode + removeZero($('#telephone').val()),
+                first_name: $('#firstName').val(),
+                last_name: $('#lastName').val(),
+                mobile: '+' + countrycode + removeZero($('#telephone').val()),
                 gender: $('#gender').val(),
                 specialty: $('#specialty').val(),
                 email: $('#email').val(),
-                cost_per_session: $('#SessionCost').val(),
-                time_session: $('#SessionTime').val(),
-                birthDate: $('#birthDate').val(),
+                cost_per_session: +$('#SessionCost').val(),
+                time_session: +$('#SessionTime').val(),
+                birth_date: $('#birthDate').val(),
             };
-            console.log(data);
             var fileExtension = ['jpeg', 'jpg', 'png', 'pdf'];
             const fd = new FormData();
             const Other = $("#Other")[0].files; // for multiple files
@@ -1516,7 +1540,7 @@
                 var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
                 if ($.inArray(fileNameExt, fileExtension) === -1) {
                     $.notify({
-                        message: 'Files should be only images or pdfs'
+                        message: 'Other Files should be only images or pdfs'
                     }, {
                         placement: {
                             from: "top",
@@ -1526,6 +1550,8 @@
                     });
                     $(".signUp").show();
                     $(".fa-spin").hide();
+                    $('#submit').attr("disabled", false);
+
                     return false;
                 }
                 fd.append('other', Other[i]);
@@ -1537,7 +1563,7 @@
                 var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
                 if ($.inArray(fileNameExt, fileExtension) === -1) {
                     $.notify({
-                        message: 'Files should be only images or pdfs'
+                        message: 'Graduation Certificate should be only images or pdfs'
                     }, {
                         placement: {
                             from: "top",
@@ -1547,6 +1573,8 @@
                     });
                     $(".signUp").show();
                     $(".fa-spin").hide();
+                    $('#submit').attr("disabled", false);
+
                     return false;
                 }
                 fd.append('graduation_certificate', GraduationCertificate[i]);
@@ -1558,7 +1586,7 @@
                 var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
                 if ($.inArray(fileNameExt, fileExtension) === -1) {
                     $.notify({
-                        message: 'Files should be only images or pdfs'
+                        message: 'Medical License should be only images or pdfs'
                     }, {
                         placement: {
                             from: "top",
@@ -1568,15 +1596,15 @@
                     });
                     $(".signUp").show();
                     $(".fa-spin").hide();
+                    $('#submit').attr("disabled", false);
+
                     return false;
                 }
                 fd.append('medical_license', MedicalLicense[i]);
             }
 
-            console.log(GraduationCertificate);
-            console.log(MedicalLicense);
-            console.log(Other);
             fd.append('data', JSON.stringify(data));
+            console.log(data);
             $.ajax({
                 type: 'POST',
                 processData: false,
@@ -1587,7 +1615,7 @@
                 enctype: 'multipart/form-data',
                 success: function (msg) {
                     $.notify({
-                        message: msg.message
+                        message: 'Congratulations Your Request Has Been Submitted'
                     }, {
                         placement: {
                             from: "top",
@@ -1597,10 +1625,13 @@
                     });
                     $(".fa-spin").hide();
                     $(".signUp").show();
+                    location.reload();
+                    $('#submit').attr("disabled", false);
+
                 },
                 error: function (msg) {
                     $.notify({
-                        message: msg.message
+                        message: msg.responseJSON.message
                     }, {
                         placement: {
                             from: "top",
@@ -1610,34 +1641,11 @@
                     });
                     $(".fa-spin").hide();
                     $(".signUp").show();
+                    $('#submit').attr("disabled", false);
 
                 }
             });
         });
-    });
-</script>
-
-<script>
-    // var input = document.querySelector("#telephone");
-    // var iti = intlTelInput(input);
-    // window.intlTelInput(input, {
-    //     utilsScript: 'js/utils.js',
-    //     preferredCountries: ["eg"],
-    //     customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
-    //         return "e.g. " + selectedCountryPlaceholder;
-    //     },
-    // });
-    // var countryData = iti.getSelectedCountryData();
-    // console.log(countryData)
-
-    $("#telephone").intlTelInput({
-        preferredCountries: ["EG"],
-        separateDialCode: true,
-        customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
-            return "e.g. " + selectedCountryPlaceholder;
-        },
-    }).on('countrychange', function (e, countryData) {
-        var countrycode = $("#telephone").intlTelInput("getSelectedCountryData").dialCode;
     });
 </script>
 

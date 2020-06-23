@@ -826,7 +826,7 @@ img {
 
 .navbar-sticky-on .navbar-brand-sticky {
     display: inline;
-	max-width: 80px;
+	max-width: 95px;
 }
 
 /*NAVBAR DARK*/
@@ -2239,7 +2239,7 @@ img {
 
 
 img.navbar-brand-regular {
-    max-width: 80px;
+    max-width: 95px;
 }
 
 .service-thumb >img {
